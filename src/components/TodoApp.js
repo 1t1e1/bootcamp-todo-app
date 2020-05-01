@@ -1,20 +1,20 @@
-import React from 'react';
+import React from "react";
 import TodoAppHeader from "./TodoAppHeader";
 import TodoAppList from "./TodoAppList";
 
-class TodoApp extends React.Component{
-    constructor(props){
+class TodoApp extends React.Component {
+    constructor(props) {
         super(props);
     }
 
-    render(){
+    render() {
         return (
             <div>
-                <TodoAppHeader/>
+                <TodoAppHeader />
                 <TodoAppList />
             </div>
         );
     }
 }
 
-export default TodoApp
+export default TodoApp;
