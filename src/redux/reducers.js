@@ -16,6 +16,26 @@ const DEFAULT_STATE = [
         completed: false,
         content: "learn redux",
     },
+    {
+        id: Math.random(),
+        completed: true,
+        content: "add delete function",
+    },
+    {
+        id: Math.random(),
+        completed: false,
+        content: "add edit function",
+    },
+    {
+        id: Math.random(),
+        completed: false,
+        content: "filter as completed, not comp & all",
+    },
+    {
+        id: Math.random(),
+        completed: false,
+        content: "css use UI library",
+    },
 ];
 
 export const todoReducer = (state = DEFAULT_STATE, action) => {
