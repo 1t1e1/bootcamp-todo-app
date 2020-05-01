@@ -1,3 +1,5 @@
+import { ADD_TODO, TOGGLE_TODO, DELETE_TODO } from "./types";
+
 const DEFAULT_STATE = [
     {
         id: Math.random(),
@@ -18,7 +20,7 @@ const DEFAULT_STATE = [
 
 export const todoReducer = (state = DEFAULT_STATE, action) => {
     switch (action.type) {
-        case "ADD_TODO":
+        case ADD_TODO:
             return [
                 ...state,
                 {
@@ -27,13 +29,15 @@ export const todoReducer = (state = DEFAULT_STATE, action) => {
                     content: action.payload,
                 },
             ];
-        case "TOGGLE_TODO":
+        case TOGGLE_TODO:
             return state.map((todo) => {
                 if (todo.id === action.payload) {
                     return { ...todo, completed: !todo.completed };
                 }
                 return todo;
             });
+        case DELETE_TODO:
+            return state.filter((todo) => todo.id !== action.payload);
         default:
             return state;
     }
