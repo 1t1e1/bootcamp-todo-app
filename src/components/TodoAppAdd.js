@@ -20,7 +20,10 @@ class TodoAppAdd extends Component {
                         e.preventDefault();
                         // statete tuttugum inputu son degerini aliyorum
                         const newContent = this.state.value;
-                        this.props.addTodo(newContent);
+                        if (newContent) {
+                            this.props.addTodo(newContent);
+                            this.setState({ value: "" });
+                        }
                     }}
                 >
                     <input
