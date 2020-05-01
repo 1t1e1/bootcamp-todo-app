@@ -13,10 +13,13 @@ const TodoAppListItem = ({
         <div
             style={{
                 width: "250px",
+                margin: "20px 0",
             }}
         >
             <div
                 style={{
+                    width: "190px",
+                    margin: "10px",
                     display: "inline",
                     textDecoration: completed ? "line-through" : "initial",
                 }}
@@ -24,18 +27,17 @@ const TodoAppListItem = ({
             >
                 {content}
             </div>
-            <div
+            <button
                 style={{
-                    display: "inline",
+                    width: "30px",
                     float: "right",
                 }}
                 onClick={() => {
-                    console.log(id);
                     deleteTodo(id);
                 }}
             >
                 del
-            </div>
+            </button>
         </div>
     );
 };
