@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addTodo } from "../redux/actions";
+import { Input, InputGroup, InputGroupText, InputGroupAddon, Button } from 'reactstrap';
 
 class TodoAppAdd extends Component {
     constructor(props) {
@@ -26,7 +27,8 @@ class TodoAppAdd extends Component {
                         }
                     }}
                 >
-                    <input
+                  <InputGroup>
+                    <Input
                         type="text"
                         placeholder="Todo Giriniz"
                         value={this.state.value}
@@ -36,7 +38,11 @@ class TodoAppAdd extends Component {
                             });
                         }}
                     />
-                    <button type="submit">Todo Ekle</button>
+                    <InputGroupAddon addonType="append">
+                        <Button type="submit">Todo Ekle</Button>
+                    </InputGroupAddon>
+                  </InputGroup>
+              
                 </form>
             </div>
         );

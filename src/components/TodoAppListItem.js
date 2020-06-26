@@ -1,6 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import { toggleTodo, deleteTodo } from "../redux/actions";
+import { CardSubtitle, Button, CardText } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 const TodoAppListItem = ({
     content,
@@ -10,35 +13,31 @@ const TodoAppListItem = ({
     deleteTodo,
 }) => {
     return (
-        <div
-            style={{
-                width: "250px",
-                margin: "20px 0",
-            }}
-        >
-            <div
-                style={{
-                    width: "190px",
-                    margin: "10px",
-                    display: "inline",
-                    textDecoration: completed ? "line-through" : "initial",
-                }}
-                onClick={() => toggleTodo(id)}
-            >
-                {content}
-            </div>
-            <button
-                style={{
-                    width: "30px",
-                    float: "right",
-                }}
-                onClick={() => {
-                    deleteTodo(id);
-                }}
-            >
-                del
-            </button>
-        </div>
+        <CardSubtitle style={{margin: "20px"}}>
+          <CardText
+              style={{
+                  width: "200px",
+                  margin: "5px",
+                  padding: "5px",
+                  display: "inline",
+                  textDecoration: completed ? "line-through" : "initial",
+              }}
+              onClick={() => toggleTodo(id)}
+          >
+              {content}
+          <Button color="danger"
+              style={{
+                  // width: "40px",
+                  float: "right",
+              }}
+              onClick={() => {
+                  deleteTodo(id);
+              }}
+          >
+              <FontAwesomeIcon icon={faTrash} />
+          </Button>
+          </CardText>
+        </CardSubtitle>
     );
 };
 

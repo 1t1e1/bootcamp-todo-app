@@ -1,12 +1,22 @@
 import React from "react";
 import TodoAppTitle from "./TodoAppTitle";
 import TodoAppAdd from "./TodoAppAdd";
+import {  CardBody, CardTitle, CardSubtitle } from 'reactstrap';
 
 const TodoAppHeader = (props) => {
     return (
         <div>
-            <TodoAppTitle />
-            <TodoAppAdd />
+          <CardBody>
+
+            <CardTitle>
+              <TodoAppTitle />
+            </CardTitle>
+
+            <CardSubtitle> 
+              <TodoAppAdd />
+            </CardSubtitle>
+
+          </CardBody>
         </div>
     );
 };
