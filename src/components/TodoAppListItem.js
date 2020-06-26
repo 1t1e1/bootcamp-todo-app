@@ -13,7 +13,9 @@ const TodoAppListItem = ({
     deleteTodo,
 }) => {
     return (
-        <CardSubtitle style={{margin: "20px"}}>
+        <CardSubtitle style={{ margin: "20px" }}
+              onClick={() => toggleTodo(id)}
+        >
           <CardText
               style={{
                   width: "200px",
@@ -22,9 +24,11 @@ const TodoAppListItem = ({
                   display: "inline",
                   textDecoration: completed ? "line-through" : "initial",
               }}
-              onClick={() => toggleTodo(id)}
+              // onClick={() => toggleTodo(id)}
           >
               {content}
+          {/* </CardText>
+          <CardText> */}
           <Button color="danger"
               style={{
                   // width: "40px",
