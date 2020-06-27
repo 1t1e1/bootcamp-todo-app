@@ -18,27 +18,31 @@ const TodoAppListItem = ({
         >
           <CardText
               style={{
-                  width: "200px",
                   margin: "5px",
                   padding: "5px",
-                  display: "inline",
                   textDecoration: completed ? "line-through" : "initial",
               }}
-              // onClick={() => toggleTodo(id)}
           >
+          <div
+            style={{
+              display: "inline-block",
+              lineHeight: "22px"
+            }}
+          >
+
               {content}
+            </div>
           {/* </CardText>
           <CardText> */}
           <Button color="danger"
               style={{
-                  // width: "40px",
                   float: "right",
               }}
               onClick={() => {
                   deleteTodo(id);
               }}
           >
-              <FontAwesomeIcon icon={faTrash} />
+            <FontAwesomeIcon icon={faTrash} />
           </Button>
           </CardText>
         </CardSubtitle>
